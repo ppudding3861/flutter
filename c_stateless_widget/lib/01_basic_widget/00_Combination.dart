@@ -1,5 +1,13 @@
 import 'package:flutter/cupertino.dart';
 
+import '01_TextWidget.dart';
+import '02_IconWidget.dart';
+import '03_ImageWidget.dart';
+import '04_PlaceholderWidget.dart';
+import '05_TooltipWidget.dart';
+import '06_ShowDialogWidget.dart';
+import '07_SnackBarWidget.dart';
+
 
 /*
 * StatelessWidget
@@ -17,10 +25,17 @@ class Combination extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return const Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Column(
           children: [
             TextWidget(),
+            IconWidget(),
+            ImageWidget(),
+            PlaceholderWidget(),
+            TooltipWidget(),
+            ShowDialogWidget(),
+            SnackBarWidget()
           ],
         )
       ],
