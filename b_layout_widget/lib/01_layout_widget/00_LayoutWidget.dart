@@ -1,6 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '01_MediaQueryWidget.dart';
+import '02_SizedBoxWidget.dart';
+import '03_RowWidget.dart';
+import '04_StackWidget.dart';
+import '05_ListViewWidget.dart';
+import '06_WrapWidget.dart';
+import '07_PaddingWidget.dart';
+import '08_AlignWidget.dart';
+
 class LayoutCombination extends StatelessWidget{
 
   LayoutCombination({super.key});
@@ -28,7 +37,16 @@ class LayoutCombination extends StatelessWidget{
           color: Colors.blue,
           child: Column(
             children: [
-              const Text("Container 위젯")
+               const Text("Container 위젯"),
+              const MediaQueryWidget(),
+              const SizedBoxWidget(),
+              const RowWidget(),
+              const StackWidget(),
+              const ListViewWidget(),
+              DynamicListView(),
+              const WrapWidget(),
+              PaddingWidget(size: 10.0),
+              const AlignContainer()
             ],
           ),
         )
