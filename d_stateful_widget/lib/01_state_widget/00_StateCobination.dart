@@ -2,6 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '01_ElevatedBtmWidget.dart';
+import '02_TextBtnWidget.dart';
+import '03_ButtonWidget.dart';
+import '04_CheckboxWidget.dart';
+import '05_SwitchWidget.dart';
+import '06_SliderWidget.dart';
+import '07_TextFieldWidget.dart';
 
 /*
 * StatefulWidget
@@ -78,8 +84,13 @@ class _InteractionWidgetState extends State<InteractionWidget>{
     return Column(
       children: [
         Text("현재 카운트 : $_count"),
-        ElevatedButton(onPressed: _incrementCounter, child: Text("증가")),
-        ElevatedBtnWidget(onPressed: _decrementCounter)
+        TextBtnWidget(_incrementCounter, _count),
+        ElevatedBtnWidget(count: _count, onPressed: _decrementCounter),
+        const ButtonCombination(),
+        CheckboxWidget(),
+        const SwitchWidget(),
+        const SliderWidget(),
+        TextFieldWidget()
       ],
     );
   }
