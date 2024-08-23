@@ -8,6 +8,7 @@ import '04_CheckboxWidget.dart';
 import '05_SwitchWidget.dart';
 import '06_SliderWidget.dart';
 import '07_TextFieldWidget.dart';
+import '08_ProgressIndicatorWidget.dart';
 
 /*
 * StatefulWidget
@@ -90,7 +91,8 @@ class _InteractionWidgetState extends State<InteractionWidget>{
         CheckboxWidget(),
         const SwitchWidget(),
         const SliderWidget(),
-        TextFieldWidget()
+        TextFieldWidget(),
+        ProgressIndicatorWidget()
       ],
     );
   }
