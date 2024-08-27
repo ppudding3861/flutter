@@ -1,5 +1,8 @@
 
 import 'package:hive/hive.dart';
+part 'CoffeeItem.g.dart';
+// flutter pub get
+// flutter pub run build_runner build
 
 @HiveType(typeId: 0)
 class CoffeeItem{
