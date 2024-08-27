@@ -39,9 +39,27 @@ class _HiveState extends State<HiveScreen>{
           ElevatedButton(onPressed: (){
             final value = box!.get("key");
             print(value);
-          }, child: Text("조회"))
+          }, child: Text("조회")),
 
+          ElevatedButton(onPressed: (){
+            Map<String, String> mapList = {"key1":"value","key2":"value","key3":"value",};
+            box!.putAll(mapList);
+            // {key : value} -> map
+          }, child: Text("다중 데이터 저장")),
 
+          ElevatedButton(onPressed: (){
+            final length = box!.length; // 저장소의 길이를 확인한다.
+            final values = box!.values; // 저장되어 있는 모든 value를 가져온다.
+            print("length : $length \n values : $values");
+
+          }, child: const Text("전체 조회")),
+
+          ElevatedButton(onPressed: (){
+            box!.delete("key");
+            final length = box!.length;
+            final values = box!.values;
+            print("length : $length \n values : $values");
+          }, child: const Text("삭제"))
         ],
       ),
     );

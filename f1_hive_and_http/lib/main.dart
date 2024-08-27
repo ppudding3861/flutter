@@ -3,6 +3,7 @@ import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 
 import '01_hive/00_HiveScreen.dart';
+import '02_http/00_NetworkScreen.dart';
 
 
 /*
@@ -75,7 +76,8 @@ class RootState extends State<RootScreen>{
   }
 
   final List<Widget> _pages = [
-    HiveScreen()
+    HiveScreen(),
+    NetworkScreen()
   ];
 
   @override
