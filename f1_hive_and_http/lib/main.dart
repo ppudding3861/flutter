@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
+
+import '01_hive/00_HiveScreen.dart';
 
 
 /*
@@ -47,22 +50,48 @@ void main() async{
   * */
   WidgetsFlutterBinding.ensureInitialized();
 
-  final directory = await getApplicationDocumentsDiretory();
+  final directory = await getApplicationDocumentsDirectory();
 
-  Hive.init(path);
+  Hive.init(directory.path);
 
-  runApp(const MainApp());
+  runApp(RootScreen());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class RootScreen extends StatefulWidget{
+  RootScreen({super.key});
+
+  @override
+  RootState createState() => RootState();
+}
+
+class RootState extends State<RootScreen>{
+
+  int _currentPage = 0;
+
+  void _onPageTapped(int index){
+    setState(() {
+      _currentPage = index;
+    });
+  }
+
+  final List<Widget> _pages = [
+    HiveScreen()
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      title: "hive app",
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+        appBar: AppBar(title: const Center(child: Text("hive and http"))),
+        body: _pages[_currentPage],
+        bottomNavigationBar: BottomNavigationBar(
+            items: const<BottomNavigationBarItem>[
+              BottomNavigationBarItem(icon: Icon(Icons.save),label: "hive"),
+              BottomNavigationBarItem(icon: Icon(Icons.network_wifi),label: "network"),
+            ],
+            currentIndex: _currentPage,
+            onTap: _onPageTapped,
         ),
       ),
     );
