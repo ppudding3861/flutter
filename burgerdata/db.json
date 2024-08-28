@@ -1,0 +1,214 @@
+{
+    "menuItems": [
+        {
+          "title": "칠리모짜징거통다리세트",
+          "description": "세트 메뉴 구성: 칠리모짜징거통다리, 프렌치프라이, 콜라",
+          "ingredients": [
+            "칠리모짜징거통다리",
+            "프렌치프라이",
+            "콜라"
+          ],
+          "image": "https://kfcapi.inicis.com/kfcs_api_img/KFCS/goods/DL_2277773_20240528183515195.png",
+          "id": 14
+        },
+        {
+          "title": "칠리징거통다리세트",
+          "description": "세트 메뉴 구성: 칠리징거통다리, 프렌치프라이, 콜라",
+          "ingredients": [
+            "칠리징거통다리",
+            "프렌치프라이",
+            "콜라"
+          ],
+          "image": "https://kfcapi.inicis.com/kfcs_api_img/KFCS/goods/DL_2277767_20240529145322944.png",
+          "id": 15
+        },
+        {
+          "title": "블랙라벨폴인치즈세트",
+          "description": "세트 메뉴 구성: 블랙라벨폴인치즈, 프렌치프라이, 콜라",
+          "ingredients": [
+            "블랙라벨폴인치즈",
+            "프렌치프라이",
+            "콜라"
+          ],
+          "image": "https://kfcapi.inicis.com/kfcs_api_img/KFCS/goods/DL_2277809_20240529145631079.png",
+          "id": 16
+        },
+        {
+          "title": "징거더블다운세트",
+          "description": "세트 메뉴 구성: 징거더블다운맥스, 프렌치프라이, 콜라",
+          "ingredients": [
+            "징거더블다운맥스",
+            "프렌치프라이",
+            "콜라"
+          ],
+          "image": "https://kfcapi.inicis.com/kfcs_api_img/KFCS/goods/DL_2277779_20240528184522772.png",
+          "id": 17
+        },
+        {
+          "title": "켄터키통다리스파이시세트",
+          "description": "세트 메뉴 구성: 켄터키통다리스파이시, 프렌치프라이, 콜라",
+          "ingredients": [
+            "켄터키통다리스파이시",
+            "프렌치프라이",
+            "콜라"
+          ],
+          "image": "https://kfcapi.inicis.com/kfcs_api_img/KFCS/goods/DL_1249315_20240529145008994.png",
+          "id": 18
+        },
+        {
+          "title": "징거BLT세트",
+          "description": "세트 메뉴 구성: 징거BLT, 프렌치프라이, 콜라",
+          "ingredients": [
+            "징거BLT",
+            "프렌치프라이",
+            "콜라"
+          ],
+          "image": "https://kfcapi.inicis.com/kfcs_api_img/KFCS/goods/DL_1249310_20240528182821190.png",
+          "id": 19
+        },
+        {
+          "title": "징거타워세트",
+          "description": "세트 메뉴 구성: 징거타워, 프렌치프라이, 콜라",
+          "ingredients": [
+            "징거타워",
+            "프렌치프라이",
+            "콜라"
+          ],
+          "image": "https://kfcapi.inicis.com/kfcs_api_img/KFCS/goods/DL_2277781_20240529145125855.png",
+          "id": 20
+        },
+        {
+          "title": "클래식징거통다리세트",
+          "description": "세트 메뉴 구성: 클래식징거통다리, 프렌치프라이, 콜라",
+          "ingredients": [
+            "클래식징거통다리",
+            "프렌치프라이",
+            "콜라"
+          ],
+          "image": "https://kfcapi.inicis.com/kfcs_api_img/KFCS/goods/DL_2277773_20240528183515195.png",
+          "id": 21
+        },
+        {
+          "title": "징거세트",
+          "description": "세트 메뉴 구성: 징거, 프렌치프라이, 콜라",
+          "ingredients": [
+            "징거",
+            "프렌치프라이",
+            "콜라"
+          ],
+          "image": "https://kfcapi.inicis.com/kfcs_api_img/KFCS/goods/DL_2277769_20240528182651145.png",
+          "id": 22
+        },
+        {
+          "title": "불고기세트",
+          "description": "세트 메뉴 구성: 불고기, 프렌치프라이, 콜라",
+          "ingredients": [
+            "불고기",
+            "프렌치프라이",
+            "콜라"
+          ],
+          "image": "https://image.ajunews.com/content/image/2022/01/11/20220111123318790069.png",
+          "id": 23
+        },
+        {
+          "title": "커널박스",
+          "description": "세트 메뉴 구성: 커널버거, 프렌치프라이, 콜라, 핫크리스피통다리",
+          "ingredients": [
+            "커널버거",
+            "프렌치프라이",
+            "콜라",
+            "핫크리스피통다리"
+          ],
+          "image": "https://pimg.mk.co.kr/meet/neds/2021/04/image_readtop_2021_319029_16174364154597407.jpg",
+          "id": 24
+        },
+        {
+          "title": "커널데리야끼세트",
+          "description": "세트 메뉴 구성: 커널데리야끼버거, 프렌치프라이, 콜라",
+          "ingredients": [
+            "커널데리야끼버거",
+            "프렌치프라이",
+            "콜라"
+          ],
+          "image": "https://pimg.mk.co.kr/meet/neds/2020/02/image_readtop_2020_174516_15821588854093019.jpg",
+          "id": 25
+        },
+        {
+          "title": "커널세트",
+          "description": "세트 메뉴 구성: 커널버거, 프렌치프라이, 콜라",
+          "ingredients": [
+            "커널버거",
+            "프렌치프라이",
+            "콜라"
+          ],
+          "image": "https://kfcapi.inicis.com/kfcs_api_img/KFCS/goods/DL_2277810_20240529145749834.png",
+          "id": 26
+        },
+        {
+          "title": "불닭칠리모짜슈퍼박스",
+          "description": "세트 메뉴 구성: 칠리모짜징거통다리, 프렌치프라이, 스프라이트, 핫크리스피통다리, 에그타르트, 불닭소스",
+          "ingredients": [
+            "칠리모짜징거통다리",
+            "프렌치프라이",
+            "스프라이트",
+            "핫크리스피통다리",
+            "에그타르트",
+            "불닭소스"
+          ],
+          "image": "https://kfcapi.inicis.com/kfcs_api_img/KFCS/goods/DL_2278049_20240819192354052.png",
+          "id": 27
+        },
+        {
+          "title": "불닭칠리슈퍼박스",
+          "description": "세트 메뉴 구성: 칠리징거통다리, 프렌치프라이, 스프라이트, 핫크리스피통다리, 에그타르트, 불닭소스",
+          "ingredients": [
+            "칠리징거통다리",
+            "프렌치프라이",
+            "스프라이트",
+            "핫크리스피통다리",
+            "에그타르트",
+            "불닭소스"
+          ],
+          "image": "https://kfcapi.inicis.com/kfcs_api_img/KFCS/goods/DL_1249295_20240702082537533.png",
+          "id": 28
+        },
+        {
+          "title": "블랙라벨폴인치즈박스",
+          "description": "세트 메뉴 구성: 블랙라벨폴인치즈, 핫크리스피통다리, 프렌치프라이, 콜라",
+          "ingredients": [
+            "블랙라벨폴인치즈",
+            "핫크리스피통다리",
+            "프렌치프라이",
+            "콜라"
+          ],
+          "image": "https://img.danawa.com/prod_img/500000/900/293/img/4293900_1.jpg?_v=20240429134349",
+          "id": 29
+        },
+        {
+          "title": "징거더블다운박스",
+          "description": "세트 메뉴 구성: 징거더블다운맥스, 핫크리스피통다리, 프렌치프라이, 콜라",
+          "ingredients": [
+            "징거더블다운맥스",
+            "핫크리스피통다리",
+            "프렌치프라이",
+            "콜라"
+          ],
+          "image": "https://kfcapi.inicis.com/kfcs_api_img/KFCS/goods/DL_2176701_20240528164124151.png",
+          "id": 30
+        },
+        {
+          "title": "켄터키통다리스파이시박스",
+          "description": "세트 메뉴 구성: 켄터키통다리스파이시, 핫크리스피통다리, 프렌치프라이, 콜라",
+          "ingredients": [
+            "켄터키통다리스파이시",
+            "핫크리스피통다리",
+            "프렌치프라이",
+            "콜라"
+          ],
+          "image": "https://ccimg.hellomarket.com/images/2021/item/07/20/10/3156191_5225716_1.jpg?size=s6&f=webp",
+          "id": 31
+        }
+      ]
+      
+  }
+  
