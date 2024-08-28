@@ -8,7 +8,7 @@ class BurgerViewModel extends ChangeNotifier {
   List<BurgerItem> _burgerItems = []; // 커피 -> 버거
   List<BurgerItem> get burgerItems => _burgerItems;
 
-  BurgerItem? _burgerItem;
+  BurgerItem? _burgerItem = BurgerItem.empty();
   BurgerItem? get burgerItem => _burgerItem;
 
   final BurgerService _burgerService; // 서비스명 변경
@@ -75,6 +75,7 @@ class BurgerViewModel extends ChangeNotifier {
     } else {
       _burgerItem?.image = null;
     }
+    notifyListeners();
   }
 
   void setTitle(String? title) {
