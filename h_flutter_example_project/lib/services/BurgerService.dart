@@ -1,4 +1,4 @@
-import 'dart:convert';
+import 'dart:convert'; // utf8 인코딩 및 디코딩을 위해 필요
 
 import 'package:h_flutter_example_project/models/BurgerItem.dart'; // 모델 파일명 변경
 import 'package:hive/hive.dart';
@@ -24,7 +24,8 @@ class BurgerService { // 클래스명 변경
       final response = await http.get(Uri.parse(url));
 
       if (response.statusCode == 200) {
-        List<dynamic> fetchedItems = json.decode(response.body);
+        // UTF-8 형식으로 응답 본문 디코딩
+        List<dynamic> fetchedItems = json.decode(utf8.decode(response.bodyBytes));
 
         List<BurgerItem> burgerItems = fetchedItems.map(
               (item) => BurgerItem.fromJson(item),
