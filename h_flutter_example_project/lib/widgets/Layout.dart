@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../views/AddCoffeeScreen.dart';
+import '../views/FavoriteCoffeeListScreen.dart';
 import '../views/RootScreen.dart';
 
 class Layout extends StatefulWidget{
@@ -22,7 +24,8 @@ class _LayoutState extends State<Layout>{
 
   final List<Widget> _pages = [
     const RootScreen(),
-
+    FavoriteCoffeeListScreen(),
+    AddCoffeeScreen()
   ];
 
   @override
