@@ -1,28 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'FavoriteItem.dart';
+part of 'BurgerFavoriteItem.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class FavoriteItemAdapter extends TypeAdapter<FavoriteItem> {
+class BurgerFavoriteItemAdapter extends TypeAdapter<BurgerFavoriteItem> {
   @override
   final int typeId = 1;
 
   @override
-  FavoriteItem read(BinaryReader reader) {
+  BurgerFavoriteItem read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return FavoriteItem(
+    return BurgerFavoriteItem(
       fields[0] as int,
     );
   }
 
   @override
-  void write(BinaryWriter writer, FavoriteItem obj) {
+  void write(BinaryWriter writer, BurgerFavoriteItem obj) {
     writer
       ..writeByte(1)
       ..writeByte(0)
@@ -35,7 +35,7 @@ class FavoriteItemAdapter extends TypeAdapter<FavoriteItem> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is FavoriteItemAdapter &&
+      other is BurgerFavoriteItemAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

@@ -1,12 +1,11 @@
 import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ImageWidget extends StatelessWidget {
-  String? image;
+  final String? image; // final로 선언하여 불변으로 만듦
 
-  ImageWidget({required this.image, super.key});
+  const ImageWidget({required this.image, super.key}); // const 생성자 추가
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +17,7 @@ class ImageWidget extends StatelessWidget {
         child: const Center(child: Text("이미지 없음")),
       );
     }
+
     // 이미지가 파일 경로인지 확인
     bool isFile = image!.startsWith('file://') || File(image!).existsSync();
 
@@ -26,17 +26,14 @@ class ImageWidget extends StatelessWidget {
       height: 100,
       child: isFile
           ? FutureBuilder<File>(
-        future:
-        File(image!).existsSync() ? Future.value(File(image!)) : null,
+        future: Future.value(File(image!)),
         builder: (BuildContext context, AsyncSnapshot<File> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
+          } else if (snapshot.hasError || !snapshot.hasData) {
             return const Center(child: Text('이미지 로드 실패'));
-          } else if (snapshot.hasData) {
-            return Image.file(snapshot.data!, fit: BoxFit.fill,);
           } else {
-            return const Center(child: Text('파일 없음'));
+            return Image.file(snapshot.data!, fit: BoxFit.fill);
           }
         },
       )
@@ -54,6 +51,8 @@ class ImageWidget extends StatelessWidget {
             ),
           );
         },
+        errorBuilder: (context, error, stackTrace) =>
+        const Center(child: Text('이미지 로드 실패')), // 네트워크 이미지 로드 실패 처리
       ),
     );
   }

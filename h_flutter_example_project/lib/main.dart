@@ -1,16 +1,18 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:h_flutter_example_project/controllers/CoffeeViewModel.dart';
-import 'package:h_flutter_example_project/controllers/FavoriteViewModel.dart';
-import 'package:h_flutter_example_project/models/CoffeeItem.dart';
-import 'package:h_flutter_example_project/models/FavoriteItem.dart';
-import 'package:h_flutter_example_project/services/CoffeeService.dart';
-import 'package:h_flutter_example_project/services/FavoriteService.dart';
-import 'package:h_flutter_example_project/themes/CoffeeTheme.dart';
-import 'package:h_flutter_example_project/widgets/Layout.dart';
+import 'package:h_flutter_example_project/controllers/BurgerViewModel.dart';
+import 'package:h_flutter_example_project/controllers/BurgerFavoriteViewModel.dart';
+import 'package:h_flutter_example_project/models/BurgerItem.dart'; // BurgerItem으로 수정
+import 'package:h_flutter_example_project/models/BurgerFavoriteItem.dart'; // BurgerFavoriteItem으로 수정
+import 'package:h_flutter_example_project/services/BurgerService.dart';
+import 'package:h_flutter_example_project/services/BurgerFavoriteService.dart';
+import 'package:h_flutter_example_project/themes/BurgerAppTheme.dart'; // BurgerAppTheme으로 수정
+import 'package:h_flutter_example_project/widgets/Layout.dart'; // Layout 위젯 임포트 경로 수정
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
+
 
 /*
 * 임포트 lib 목록
@@ -28,44 +30,41 @@ void main() async {
   final directory = await getApplicationDocumentsDirectory();
   Hive.init(directory.path);
 
-  Hive.registerAdapter(CoffeeItemAdapter());
-  Hive.registerAdapter(FavoriteItemAdapter());
+  Hive.registerAdapter(BurgerItemAdapter()); // BurgerItemAdapter로 수정
+  Hive.registerAdapter(BurgerFavoriteItemAdapter()); // BurgerFavoriteItemAdapter로 수정
 
-  await Hive.openBox<FavoriteItem>("favoriteBox");
+  await Hive.openBox<BurgerFavoriteItem>("burgerFavoriteBox"); // favoriteBox 이름 수정
 
   runApp(MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-            create: (context) => CoffeeViewModel(CoffeeService())
-        ),
-        ChangeNotifierProvider(
-            create: (context) => FavoriteViewModel(FavoriteService())
-        ),
-      ],
-      child: const MainApp(),
+    providers: [
+      ChangeNotifierProvider(
+        create: (context) => BurgerViewModel(BurgerService()), // Burger 관련 ViewModel로 수정
+      ),
+      ChangeNotifierProvider(
+        create: (context) => BurgerFavoriteViewModel(BurgerFavoriteService()), // Burger 관련 ViewModel로 수정
+      ),
+    ],
+    child: const MainApp(),
   ));
 }
 
-class MainApp extends StatelessWidget{
-
+class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // 화면의 가장 자리까지 공간을 차지하겠다
+    // 화면의 가장자리까지 공간을 차지하도록 설정
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
     return MaterialApp(
       debugShowCheckedModeBanner: false, // 오른쪽 상단의 띠를 제거함
-      title: "my coffee",
-      theme: CafeAppTheme.lightTheme,
-      darkTheme: CafeAppTheme.darkTheme,
+      title: "My Burger App", // 앱 제목을 버거로 변경
+      theme: BurgerAppTheme.lightTheme, // 테마를 BurgerAppTheme으로 변경
+      darkTheme: BurgerAppTheme.darkTheme, // 테마를 BurgerAppTheme으로 변경
       initialRoute: "/",
       routes: {
-        "/" : (context) => Layout()
+        "/": (context) => const Layout(), // Layout 위젯으로 경로 설정
       },
     );
-
   }
 }
-

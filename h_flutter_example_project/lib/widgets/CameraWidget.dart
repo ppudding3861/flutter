@@ -4,21 +4,19 @@ import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CameraWidget extends StatefulWidget{
-  String? imagePath;
-  Function? setMethod;
+class CameraWidget extends StatefulWidget {
+  final String? imagePath;
+  final Function(String?)? setMethod;
 
-  CameraWidget({required this.imagePath, required this.setMethod});
+  CameraWidget({required this.imagePath, required this.setMethod, super.key});
 
   @override
   _CameraWidgetState createState() => _CameraWidgetState();
 }
 
-class _CameraWidgetState extends State<CameraWidget>{
+class _CameraWidgetState extends State<CameraWidget> {
   late CameraController _controller;
   Future<void>? _initializeControllerFuture;
-
-  _CameraWidgetState();
 
   @override
   void initState() {
@@ -26,15 +24,11 @@ class _CameraWidgetState extends State<CameraWidget>{
     _initializeCamera();
   }
 
-
-  Future<void> _initializeCamera() async{
+  Future<void> _initializeCamera() async {
     final cameras = await availableCameras();
     _controller = CameraController(cameras[0], ResolutionPreset.high);
     _initializeControllerFuture = _controller.initialize();
-
-    setState(() {
-
-    });
+    setState(() {}); // State 업데이트
   }
 
   @override
@@ -52,37 +46,39 @@ class _CameraWidgetState extends State<CameraWidget>{
           height: 500,
           child: FutureBuilder<void>(
             future: _initializeControllerFuture,
-            builder: (context, snapshot){
-              if(snapshot.connectionState == ConnectionState.waiting){
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(child: CircularProgressIndicator());
-              }else if(snapshot.connectionState == ConnectionState.done){
-                if(widget.imagePath != null){
+              } else if (snapshot.connectionState == ConnectionState.done) {
+                if (widget.imagePath != null) {
                   return Image.file(File(widget.imagePath!), fit: BoxFit.cover);
                 }
                 return CameraPreview(_controller);
-              }else{
+              } else {
                 return const Center(child: Text("카메라 초기화 실패"));
               }
             },
-          )
+          ),
         ),
-
-        widget.imagePath == null ?
-            FloatingActionButton(
-                onPressed: () async{
-                  try{
-                    await _initializeControllerFuture;
-                    final image = await _controller.takePicture();
-                    widget.setMethod!(image.path);
-                  }catch(e){
-                    print(e);
-                  }
-                },
-              child: const Icon(Icons.camera),
-            )
-            : IconButton(icon: const Icon(Icons.cancel_presentation), onPressed: (){
-              widget.setMethod!();
-        })
+        widget.imagePath == null
+            ? FloatingActionButton(
+          onPressed: () async {
+            try {
+              await _initializeControllerFuture;
+              final image = await _controller.takePicture();
+              widget.setMethod?.call(image.path);
+            } catch (e) {
+              print(e);
+            }
+          },
+          child: const Icon(Icons.camera),
+        )
+            : IconButton(
+          icon: const Icon(Icons.cancel_presentation),
+          onPressed: () {
+            widget.setMethod?.call(null);
+          },
+        ),
       ],
     );
   }
